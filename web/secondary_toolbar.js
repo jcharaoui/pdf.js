@@ -41,6 +41,7 @@ var SecondaryToolbar = {
     this.pageRotateCw = options.pageRotateCw;
     this.pageRotateCcw = options.pageRotateCcw;
     this.documentPropertiesButton = options.documentPropertiesButton;
+    this.back = options.back;
 
     // Attach the event listeners.
     var elements = [
@@ -59,7 +60,8 @@ var SecondaryToolbar = {
       { element: this.pageRotateCw, handler: this.pageRotateCwClick },
       { element: this.pageRotateCcw, handler: this.pageRotateCcwClick },
       { element: this.documentPropertiesButton,
-        handler: this.documentPropertiesClick }
+        handler: this.documentPropertiesClick },
+      { element: this.back, handler: this.backClick }
     ];
 
     for (var item in elements) {
@@ -115,6 +117,11 @@ var SecondaryToolbar = {
 
   documentPropertiesClick: function secondaryToolbarDocumentPropsClick(evt) {
     this.documentProperties.show();
+    this.close();
+  },
+
+  backClick: function secondaryToolbarBackClick(evt) {
+    window.history.back();
     this.close();
   },
 

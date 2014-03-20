@@ -1841,6 +1841,9 @@ function webViewerLoad(evt) {
   document.getElementById('download').addEventListener('click',
     SecondaryToolbar.downloadClick.bind(SecondaryToolbar));
 
+  document.getElementById('back').addEventListener('click',
+    SecondaryToolbar.backClick.bind(SecondaryToolbar));
+
 //#if (FIREFOX || MOZCENTRAL)
 //PDFView.setTitleUsingUrl(file);
 //PDFView.initPassiveLoading();
